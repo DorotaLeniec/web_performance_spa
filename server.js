@@ -15,6 +15,9 @@ server.get("/ssr", function(req, res) {
 server.get("/data.json", (req, res) => {
   fs.createReadStream("./data.json").pipe(res);
 });
+server.get("./data.ndjson", (req, res) => {
+  fs.createReadStream("./data.ndjson").pipe(res);
+});
 server.use(express.static(assetsDir));
 
 server.listen(3000, () => console.log("Example app listening on port 3000!"));
