@@ -1,18 +1,30 @@
 import html from "./html.js";
 import { lazy } from "./lazy.js";
-import data from "./data.js";
+import {fetchComments} from "./commentsHttpClient.js";
+// import data from "./data.js";
 // import Comments from "./comments.js";
 
 const Comments = lazy(() => import("./comments.js"));
 
 export const state = {
   showComments: true,
-  comments: data
+  comments: []
 };
 
 const ToggleComments = state => ({
   ...state,
   showComments: !state.showComments
+});
+
+export const FetchComments = [dispatch => {
+  fetchComments().then(comments => dispatch(SetComments, comments));
+}];
+
+const FetchCommentsAction = state => [{...state, comments: []}, FetchComments];
+
+const SetComments = (state, comments) => ({
+  ...state,
+  comments
 });
 
 export const view = state => html`
@@ -36,6 +48,7 @@ export const view = state => html`
         </p>
       </div>
       <button onclick=${ToggleComments}>Toggle comments</button>
+      <button onclick=${FetchCommentsAction}>Fetch comments</button>
       ${state.showComments
   ? html`
             <${Comments} comments=${state.comments} />

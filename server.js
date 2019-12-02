@@ -12,6 +12,9 @@ server.get("/ssr", function(req, res) {
   const content = render.renderToString(view(state));
   res.send(htmlTemplate.replace("<!-- PLACEHOLDER -->", content));
 });
+server.get("/data.json", (req, res) => {
+  fs.createReadStream("./data.json").pipe(res);
+});
 server.use(express.static(assetsDir));
 
 server.listen(3000, () => console.log("Example app listening on port 3000!"));
