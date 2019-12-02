@@ -21,7 +21,7 @@ export const FetchComments = [dispatch => {
   fetchComments().then(comments => dispatch(SetComments, comments));
 }];
 
-const FetchCommentsAction = state => [{...state, comments: []}, FetchComments];
+const FetchCommentsAction = state => [state, FetchComments];
 
 const SetComments = (state, comments) => ({
   ...state,
