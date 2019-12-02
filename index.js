@@ -1,7 +1,5 @@
 import { h, app } from "./web_modules/hyperapp.js";
-import htm from "./web_modules/htm.js";
-
-const html = htm.bind(h);
+import html from "./html.js";
 
 const state = 0;
 
