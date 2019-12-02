@@ -1,13 +1,13 @@
 import html from "./html.js";
 
 const VoteUp = index => state => {
-  const newState = {...state};
+  const newState = { ...state };
   newState.comments[index].score = newState.comments[index].score + 1;
   return newState;
 };
 
 const VoteDown = index => state => {
-  const newState = {...state};
+  const newState = { ...state };
   newState.comments[index].score = newState.comments[index].score - 1;
   return newState;
 };

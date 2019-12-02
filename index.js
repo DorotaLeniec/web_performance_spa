@@ -16,8 +16,14 @@ const state = {
       text:
         "In eu est eu quam rhoncus vestibulum at non lectus. Proin non libero efficitur, semper lorem hendrerit, venenatis purus. Aliquam rhoncus, velit et rutrum tempor, nibh nulla scelerisque leo, vitae laoreet libero eros ac nisi."
     }
-  ]
+  ],
+  showComments: false
 };
+
+const ToggleComments = state => ({
+  ...state,
+  showComments: !state.showComments
+});
 
 app({
   init: state,
@@ -41,7 +47,12 @@ app({
           placerat massa. Donec quis lacinia lorem.
         </p>
       </div>
-      <${Comments} comments=${state.comments} />
+      <button onclick=${ToggleComments}>Toggle comments</button>
+      ${state.showComments
+        ? html`
+            <${Comments} comments=${state.comments} />
+          `
+        : ""}
     </section>
   `,
   node: document.body

@@ -1,5 +1,5 @@
 import html from "./html.js";
-import {VoteButtons} from "./vote-buttons.js";
+import { VoteButtons } from "./vote-buttons.js";
 
 const Comments = ({ comments, index }) => html`
   <section class="post__comments">
@@ -11,7 +11,7 @@ const Comments = ({ comments, index }) => html`
           <p class="post__comment-text">
             ${c.text}
           </p>
-          <${VoteButtons} index=${index} score=${c.score}/>
+          <${VoteButtons} index=${index} score=${c.score} />
         </div>
       `;
     })}
