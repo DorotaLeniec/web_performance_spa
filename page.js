@@ -2,9 +2,9 @@ import html from "./html.js";
 import { lazy } from "./lazy.js";
 import {fetchComments} from "./commentsHttpClient.js";
 // import data from "./data.js";
-// import Comments from "./comments.js";
+import Comments from "./comments.js";
 
-const Comments = lazy(() => import("./comments.js"));
+// const Comments = lazy(() => import("./comments.js"));
 
 export const state = {
   showComments: true,

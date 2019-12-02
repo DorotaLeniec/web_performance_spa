@@ -21,5 +21,8 @@
     "parcel-bundler": "1.12.4",
     "parcel-plugin-bundle-visualiser": "1.2.0",
     "prettier": "1.19.1"
-  }
+  },
+  "browserslist": [
+    "> 0.25%, not dead"
+  ]
 }
