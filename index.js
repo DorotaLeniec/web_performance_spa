@@ -2,25 +2,13 @@ import { h, app } from "./web_modules/hyperapp.js";
 import html from "./html.js";
 // import Comments from "./comments.js";
 import {lazy, LazyLoadListen} from "./lazy.js";
+import data from "./data.js";
 
 const Comments = lazy(() => import("./comments.js"));
 
 const state = {
-  comments: [
-    {
-      username: "@username_9",
-      score: 499,
-      text:
-        "In eu est eu quam rhoncus vestibulum at non lectus. Proin non libero efficitur, semper lorem hendrerit, venenatis purus. Aliquam rhoncus, velit et rutrum tempor, nibh nulla scelerisque leo, vitae laoreet libero eros ac nisi."
-    },
-    {
-      username: "@username_83",
-      score: 498,
-      text:
-        "In eu est eu quam rhoncus vestibulum at non lectus. Proin non libero efficitur, semper lorem hendrerit, venenatis purus. Aliquam rhoncus, velit et rutrum tempor, nibh nulla scelerisque leo, vitae laoreet libero eros ac nisi."
-    }
-  ],
-  showComments: false
+  comments: data,
+  showComments: true
 };
 
 const ToggleComments = state => ({
