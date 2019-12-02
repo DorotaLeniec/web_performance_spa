@@ -6,7 +6,7 @@ import data from "./data.js";
 const Comments = lazy(() => import("./comments.js"));
 
 export const state = {
-  showComments: false,
+  showComments: true,
   comments: data
 };
 
