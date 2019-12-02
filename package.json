@@ -1,12 +1,14 @@
 {
   "scripts": {
-    "pika": "pika-web"
+    "pika": "pika-web",
+    "build": "parcel build index.html"
   },
   "dependencies": {
     "htm": "2.2.1",
     "hyperapp": "2.0.3"
   },
   "devDependencies": {
-    "@pika/web": "0.6.1"
+    "@pika/web": "0.6.1",
+    "parcel-bundler": "1.12.4"
   }
 }
