@@ -19,9 +19,6 @@ const state = {
   ]
 };
 
-const Down = state => state - 1;
-const Up = state => state + 1;
-
 app({
   init: state,
   view: state => html`
