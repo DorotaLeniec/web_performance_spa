@@ -5,7 +5,8 @@
     "prod": "cross-env NODE_ENV=production node --experimental-modules server.js",
     "pika": "pika-web",
     "build": "parcel build index.html",
-    "format": "prettier --write *.js"
+    "format": "prettier --write *.js",
+    "test": "bundlesize"
   },
   "dependencies": {
     "compression": "1.7.4",
@@ -18,11 +19,18 @@
   },
   "devDependencies": {
     "@pika/web": "0.6.1",
+    "bundlesize": "0.18.0",
     "parcel-bundler": "1.12.4",
     "parcel-plugin-bundle-visualiser": "1.2.0",
     "prettier": "1.19.1"
   },
   "browserslist": [
     "> 0.25%, not dead"
+  ],
+  "bundlesize": [
+    {
+      "path": "./dist/*.js",
+      "maxSize": "10 kB"
+    }
   ]
 }
