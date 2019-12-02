@@ -1,4 +1,5 @@
 import html from "./html.js";
+import {VoteButtons} from "./vote-buttons.js";
 
 const Comments = ({ comments }) => html`
   <section class="post__comments">
