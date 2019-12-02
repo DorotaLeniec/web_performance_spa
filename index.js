@@ -1,6 +1,9 @@
 import { h, app } from "./web_modules/hyperapp.js";
 import html from "./html.js";
-import Comments from "./comments.js";
+// import Comments from "./comments.js";
+import {lazy, LazyLoadListen} from "./lazy.js";
+
+const Comments = lazy(() => import("./comments.js"));
 
 const state = {
   comments: [
@@ -26,7 +29,7 @@ const ToggleComments = state => ({
 });
 
 app({
-  init: state,
+  init: [state, LazyLoadListen],
   view: state => html`
     <section class="post">
       <h1 class="post__title">A post about priorities and scheduling</h1>
