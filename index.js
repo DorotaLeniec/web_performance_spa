@@ -3,7 +3,10 @@ import htm from "./web_modules/htm.js";
 
 const html = htm.bind(h);
 
+const state = 0;
+
 app({
-    view: state => html`<div>text</div>`,
+    init: state,
+    view: state => html`<div>${state}</div>`,
     node: document.body
 });
