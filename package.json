@@ -4,7 +4,7 @@
     "dev": "node --experimental-modules server.js",
     "prod": "cross-env NODE_ENV=production node --experimental-modules server.js",
     "pika": "pika-web",
-    "build": "parcel build index.html",
+    "build": "parcel build index.html --experimental-scope-hoisting",
     "format": "prettier --write *.js",
     "test": "bundlesize"
   },
